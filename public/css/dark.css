@@ -1,0 +1,959 @@
+/* CSS CONTENTS TABLE. 
+    Use 'find' function, with labels below to jump to section.
+
+1. 'MAIN-SECTION'
+2. 'NAVBAR-SECTION'
+3. 'FOOTER-SECTION'
+4. 'ARTICLE-SECTION'
+5. 'MODAL-SECTION'
+6. 'NEW-ARTICLE-SECTION'
+7. 'SETTINGS SECTION'
+
+MAIN-SECTION */
+/*****************************************************************//*****************************************************************/
+
+/* website layout */
+/* ********************************************************************* */
+/* header */
+.header {
+  background-color: #464033;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ********************************************************************* */
+
+/* Fonts, misc */
+/*****************************************************************/
+* {
+  font-family: Verdana, Geneva, sans-serif;
+  line-height: 23px;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  padding-bottom:58px;
+  overflow: scroll;
+  background-color: #333;
+}
+
+p, pre, th, td, li {
+  font-size: 14px;
+} 
+
+label {
+font-family: Verdana, Geneva, sans-serif;
+font-size: 18px;
+margin: 5px;
+color: whitesmoke;
+}
+
+button {
+font-family: Lusitana, Verdana, Geneva, sans-serif;
+font-size: 16px;
+margin: 5px;
+color: whitesmoke;
+}
+
+h1 {
+  font-size: 23px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  color: whitesmoke;
+}
+
+h4 {
+  text-decoration: underline;
+}
+
+h5{
+  font-size: 15px;
+  color: #bbc4c2;
+  text-align: end;
+  margin-top: 0;
+}
+
+pre {
+  font-family: Consolas, monospace;
+}
+
+p {
+  text-align: justify;
+  color: whitesmoke;
+}
+
+.code {
+  font-family: Consolas, monospace;
+}
+
+.toastMessage{
+  margin: 0;
+  position: relative;
+  color: indianred;
+  background-color: #656565;
+  text-align: center;
+}
+
+/* NAVBAR-SECTION */
+/*****************************************************************//*****************************************************************/
+#backToTopButton {
+  display: none; 
+  position: fixed; 
+  bottom: 20px; 
+  right: 30px; 
+  z-index: 99; 
+  border: none; 
+  outline: none;
+  background-color: transparent;
+  cursor: pointer; 
+  padding: 15px;
+  font-size: 18px;
+  color: whitesmoke;
+}
+
+#backToTopButton:hover {
+  background-color: #bbc4c2;
+}
+
+/* The navbar container */
+* {box-sizing: border-box;}
+
+.topnav {
+  overflow: hidden;
+  background-color: #656565;
+  width: 100%;
+  position: sticky;
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 16px 14px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #bbc4c2;
+}
+
+.navbuttons{
+  padding: 6px;
+  margin-top: 0px;
+  margin-right: 16px;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  font-size: 17px;
+}
+
+.search-container {
+  float: right;
+
+}
+.homepage-button{
+  padding: 6px;
+  margin-top: 0px;
+  margin-right: 16px;
+  background: #656565;
+  color: whitesmoke;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  font-family: Geneva, sans-serif;
+
+}
+
+.homepage-button:hover{
+  color: #656565;
+}
+
+.navlink{
+  color: #656565;
+}
+
+.navlink:hover{
+  color: whitesmoke;
+}
+
+
+/* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+  float: none;
+  }
+
+  .topnav a, .search-container {
+    float: left;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.navbar {
+overflow: hidden;
+background-color: #333;
+}
+
+.navbar a {
+float: left;
+font-size: 16px;
+color: #333;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+}
+
+.sort-panel{
+margin-left: 80%;
+margin-top: 40px;
+}
+
+.dropdown {
+float: left;
+overflow: hidden;
+}
+
+.dropbtn {
+font-size: 17px;  
+border: none;
+outline: none;
+color: #333;
+padding: 0;
+background-color: inherit;
+font-family: inherit;
+margin: 0;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: whitesmoke;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-content a {
+float: none;
+color: #333;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+text-align: left;
+}
+
+.dropdown-content a:hover {
+background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+/* ARTICLE-SECTION */  
+/*****************************************************************//*****************************************************************/
+/* article */
+@font-face {
+font-family: 'Lusitana'
+;
+src: url(./Fonts/lusitana.regular.ttf);
+}
+
+.article-header{
+text-align: center;
+margin: 50px;
+padding: 0px;
+}
+
+.about-header{
+text-align: center;
+margin-bottom: 0px;
+margin-top: 20px;
+margin-left: 50px;
+margin-right: 50px;
+padding: 50px;
+}
+.article-body{
+color: whitesmoke;
+margin: 100px;
+padding: 50px;
+}
+
+.about-body{
+margin-top: 0px;
+margin-left: 100px;
+margin-right: 100px;
+padding-left: 100px;
+padding-right: 100px;
+padding-top: 0px;
+color: whitesmoke;
+}
+
+#article-title{
+font-family: 'Lusitana';
+font-size: 6.4rem;
+font-weight: 500;
+color: whitesmoke;
+}
+
+#subtitle{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: whitesmoke;
+}
+
+#edit-button{
+margin-right: 20px;
+color: whitesmoke;
+}
+#article-button{
+margin-left: 92%;
+}
+
+/* NEW-ARTICLE-SECTION*/
+/*****************************************************************//*****************************************************************/
+/* new article form */
+#grid-container {
+position: relative;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+height: 100%;
+width: 100%;
+margin-top: -50%;
+margin-left: -50%;
+margin: auto;
+display: grid;
+justify-content: space-between;
+grid-template-columns: 1fr;
+grid-template-rows: auto auto;
+grid-template-areas: "header" "form";
+}
+
+input[type=text], textarea[type=text] {
+width: 100%;
+padding: 12px 20px;
+margin: 8px 0;
+box-sizing: border-box;
+}
+
+.form{
+grid-area: form;
+border: 1px solid grey;
+box-shadow: 5px 5px 3px darkgray;
+margin: auto;
+padding: 25px;
+width: 80%;
+border-radius: 10px;
+
+animation-name: opacity;
+animation-duration: 0.5s;
+animation-fill-mode: forwards;
+
+display: grid;
+justify-content: space-between;
+grid-template-columns: 1fr;
+grid-template-rows: auto auto auto auto auto auto;
+grid-template-areas: "title" "description" "category" "textEditor" "image" "submit";
+z-index: 0;
+}
+
+.header{
+grid-area: header;
+display: flex;
+justify-content: left;
+padding: 10px; 
+margin: 20px;
+z-index: 0;
+}
+
+textarea{
+width: auto;
+height: auto;
+}
+
+.title{
+grid-area: title;
+padding: 10px; 
+margin: 10px;
+margin-left: 0;
+margin-right: 0;
+}
+
+.category{
+grid-area: category;
+padding: 10px; 
+margin-bottom: 20px;
+margin-left: 0;
+margin-right: 0;
+}
+
+.description{
+grid-area: description;
+padding: 10px;
+padding-bottom: 0px; 
+margin-top: 10px;
+margin-bottom: 0px;
+margin-left: 0;
+margin-right: 0;
+}
+
+#text-editor{
+grid-area: textEditor;
+justify-content: center;
+}
+
+.image{
+grid-area: image;
+padding: 10px;
+padding-top: 20px;
+margin-top: 20px;
+margin: 10px;
+margin-left: 0;
+margin-right: 0;
+}
+
+.button, .submit-button{ 
+background-color: #333;
+color: #bbc4c2;
+border: 2px solid #333;
+padding: 10px 20px;
+border-radius: 5px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 10px 10px;
+transition-duration: 0.4s;
+cursor: pointer;  
+z-index: 2;
+}
+
+.transparentButton{
+background-color: transparent;
+border: 2px solid transparent;
+cursor: pointer;  
+}
+
+.button:hover, .submit-button:hover {
+background-color:#bbc4c2;
+color: #333;
+}
+
+#create-button{
+float:right;
+margin: 20px;
+}
+
+#button-div {
+grid-area: submit;
+display: flex;
+justify-content: center;
+margin: 50;
+}
+
+#fileButton{
+z-index: 0;
+}
+
+@media screen and (max-width: 1000px) {
+#container{
+    width: 100%;
+    margin: 0;
+} 
+}
+
+@media screen and (max-width: 800px) {
+#container{
+    grid-template-columns: auto;
+} 
+}
+
+@keyframes opacity {
+from{ opacity: 0;
+}
+
+to{ opacity: 1;
+}
+}
+
+/* MODAL-SECTION */
+/*****************************************************************//*****************************************************************/
+/* cards*/
+body{
+margin: 0;
+padding: 0;
+width: 100%;
+height: 100%;
+}
+
+#article-container {
+margin-top: 50px;
+padding-left: 20px;
+padding-right: 20px;
+width: auto;
+
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-rows: auto;
+gap: 20px;
+}
+
+#featured-article {
+position: relative;
+text-align: left;
+color:aliceblue;
+width: 100%;
+height: 500;
+} 
+
+#featured-article-img {
+  position: relative;
+background: linear-gradient(to top, #357dc0ba, #4055c9cc), no-repeat top center;
+}
+
+
+#featured-info{
+position: absolute;
+text-shadow: 0 2px 0 #333;
+bottom: 30px;
+left: 40px;
+z-index: 3;
+color:aliceblue;
+margin-right: 50px;
+}
+
+.card {
+position: relative;
+border: 1px solid lightgray;
+box-shadow: 5px 5px 3px darkgray;
+color: #333;
+text-decoration: none;
+border-radius: 5px;
+
+
+display: flex;
+flex-direction: column;
+justify-content: start;
+width: auto;
+
+animation-name: opacity;
+animation-duration: 1s;
+animation-fill-mode: forwards;
+transition: transform 0.5s ease-in-out;
+}
+.card:hover {
+  transform: scale(1.02);
+  background-color: #656565;
+}
+
+
+.card-image {
+width: 100%;
+object-fit: cover;
+}
+
+.card-body{
+margin-bottom: 5px;
+margin-left: 5px;
+margin-right: 5px;
+padding: 10px;
+}
+#readTimeButton{
+width: fit-content; 
+margin-left: 65%; 
+font-size: 14px; 
+padding: 5px 10px; 
+position: absolute; 
+right: 0;
+bottom: 0;
+}
+
+#hiddenDiv{
+display: none;
+}
+
+.offDisplay{
+  display: none;
+}
+.hiddenDiv{
+  display: none;
+}
+
+.card:hover .offDisplay{
+
+display: block;
+}
+
+.card:hover .onDisplay{
+display: none;
+}
+
+@media screen and (max-width: 1000px) {
+#article-container{
+    width: 100%;
+    margin: 20px;
+    grid-template-columns: auto auto auto;
+} 
+}
+
+@media screen and (max-width: 800px) {
+#article-container{
+    grid-template-columns: auto;
+} 
+}
+
+@keyframes opacity {
+from{ opacity: 0;
+}
+
+to{ opacity: 1;
+}
+}
+
+/* SETTINGS SECTION 
+/*****************************************************************//*****************************************************************/
+/* Style page content */
+.settingsContent {
+margin-left: 100px;
+margin-right: 100px;
+padding: 0px 10px;
+}
+
+.profileContainer {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+border: 2px solid #818181;
+border-radius: 20px;
+padding: 3%; 
+background-color: #656565;
+}
+
+.modalProfileContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid #818181;
+  border-radius: 20px;
+  padding: 3%; 
+  background-color: #656565;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 50px;
+  }
+
+.userInfo {
+display: flex;
+flex-direction: column;
+margin-right: 10px;
+margin-left: 10px;
+}
+
+.detailsBox {
+border: 2px solid #818181;
+border-radius: 20px;
+padding: 1%; 
+background-color: #bbc4c2;
+padding: 20px;  
+}
+
+#imageBox {
+flex: 1;
+margin-right: 10px;
+margin-left: 10px;
+position: relative;
+}
+
+.infoBox {
+flex: 3;
+justify-content: space-around;
+align-items: center;
+padding: 1%; 
+background-color:#656565;
+padding: 20px;  
+}
+
+.accountTitle {
+font-family: Lusitana, Verdana, Geneva, sans-serif;
+font-size: 30px;
+font-weight: bold;
+margin: 5px;
+color:333;
+text-align: center;
+}
+
+.fill {
+width: 100%;
+}
+
+#userAvatar {
+width: 250px;
+height: 250px;
+border: double 6px transparent;
+border-radius: 80px;
+background-image: linear-gradient(white, white), radial-gradient(circle at top left, #bbc4c2, #464033);
+background-origin: border-box;
+background-clip: padding-box, border-box;
+opacity: 1;
+display: block;
+transition: .5s ease;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+text-align: center;
+}
+
+.avatarBorder {
+  border: 2px solid whitesmoke;
+}
+
+@media screen and (max-width: 1200px) {
+  #userAvatar {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    transform: none;
+    -ms-transform: none; 
+  }
+  .settingsContent {
+    margin: auto;
+    padding: 0%;
+    display: flex;
+    flex-direction: column;
+  }
+  .infoBox {
+    flex: auto;
+    width: auto;
+    position: relative;
+  }
+}
+@media screen and (max-width: 800px){
+  .profileContainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media screen and (max-width: 400px) {
+  #imageBox {
+    display: none;
+  }
+}
+
+#modulator {
+  display: none;
+}
+
+#avatarInput {
+  display: none;
+}
+
+.makeRow{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.middle {
+transition: .5s;
+opacity: 0;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+text-align: center;
+}
+
+#imageBox:hover #userAvatar {
+opacity: 0.3;
+}
+
+#imageBox:hover .middle {
+opacity: 1;
+}
+
+#avatarButton {
+background-color:#333;
+color: #bbc4c2;
+font-size: 16px;
+padding: 8px 16px;
+text-align: center;
+font-family: Lusitana, Verdana, Geneva, sans-serif;
+cursor: pointer;
+border: 2px solid #818181;
+border-radius: 20px;
+}
+
+#accountButtons {
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+font-family: Lusitana, Verdana, Geneva, sans-serif;
+}
+
+#passwordButtons {
+display: flex;
+flex-direction: row;
+justify-content: left;
+font-family: Lusitana, Verdana, Geneva, sans-serif;
+}
+
+#submitButton {
+font-family: Lusitana, Verdana, Geneva, sans-serif;
+font-size: 18px;
+margin-top: 10px;
+}
+
+.modalButtons {
+margin-top: 4px;
+margin-right: 4px;
+font-family: Lusitana, Verdana, Geneva, sans-serif;
+}
+
+.confirmModal {
+z-index: 3;
+display: none;
+padding-top: 100px;
+position: fixed;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgb(0, 0, 0);
+background-color: rgba(0, 0, 0, 0.4);
+border: 4px solid #818181;
+}
+
+.legend-titles {
+font-family: Lusitana, Verdana, Geneva, sans-serif;
+font-size: 26px;
+font-weight: bold;
+margin: 5px;
+margin-bottom: 20px;
+color: whitesmoke;
+};
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+.sideBar {
+  padding-top: 15px;
+}
+
+.sideBar a {
+  font-size: 18px;
+}
+}
+
+/* FOOTER-SECTION
+  /*****************************************************************//*****************************************************************/
+/* footer */
+.footer {
+background-color: #656565;
+color: whitesmoke;
+text-align: center;
+padding: 0px;
+margin-top: 60px;
+position: relative;
+left: 0;
+bottom: 0;
+width: 100%;
+}
+
+.footer a {
+color: whitesmoke;
+}
+
+/* Style all font awesome icons */
+.fa {
+padding: 20px;
+font-size: 30px;
+width: 50px;
+text-align: center;
+text-decoration: none;
+color: whitesmoke;
+}
+
+/* Add a hover */
+.fa:hover {
+opacity: 0.7;
+}
+
+.copyright{
+
+font-size: small;
+
+}
+/* COMMENT_SECTION */
+/*****************************************************************//*****************************************************************/
+
+#comment-container{
+  display: flex;
+ }
+ 
+ .comment-box{
+   border-radius: 0.5rem; 
+   box-shadow: 0px 0px 5pc 3px rgba(219, 221, 222, 0.39); 
+   position:relative; 
+   top: 50%; 
+   left: 50%;
+   transform: translate(-50%, -50%); 
+   margin-top: 50px;
+   padding: 1.5rem; 
+   width: 80%;
+ }
+ 
+ .comment-textarea{
+     width: 100%; 
+     background: #eee;  
+     border: none; 
+     padding: 0.5rem; 
+     resize: none; 
+     box-shadow: 0px 0px 4px 1px rgba(230, 230, 230, 0.19); 
+     border-radius: 2px;
+     margin-bottom: 0.3rem;
+     color:#737373;
+   }
+ 
+ .statusBox{ 
+    background:#eee;
+     padding: 1rem; 
+     border-radius: 5px;
+     font-size: 14px;
+     color: #737373;
+     margin-top: 15px; 
+ }
+
+ #comment-user {
+  text-decoration: underline;
+  font-size: 18;
+  color: whitesmoke;
+ }
+
+ .col-9 {
+  color: whitesmoke;
+ }

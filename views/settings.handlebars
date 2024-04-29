@@ -1,0 +1,122 @@
+<div class="settingsContent">
+    <div>
+        <br>
+        <legend class="legend-titles">General Settings</legend>
+        <div class="profileContainer">
+            <div class="infoBox">
+                <br>
+                <div class="makeRow">
+                    <div>
+                        <label>Toggle Dark-mode:</label>
+                    </div>
+                    <div>
+                        <dark-mode-toggle appearance="toggle" dark="Light" light="Dark" id="darkMode">
+                        </dark-mode-toggle>
+                    </div>
+                </div>
+                <p id="darkModeMessage"></p>
+                <form action="/updateSettings" method="POST">
+                <input name="modulator" id="modulator" value="" style="width: 300px">
+                <div id="accountButtons">
+
+                    <button type="submit" class="button">Update Settings</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div><br>
+    <div>
+        <legend class="legend-titles">Account Information</legend>
+        <div class="profileContainer">
+            <div id="imageBox">
+                <img src="./images/avatars/{{user.avatar}}" alt="Users Avatar" width="200" height="auto"
+                    id="userAvatar">
+                <div class="middle">
+                    <div id="avatarButton">Change Avatar?</div>
+                </div>
+            </div>
+            <div class="infoBox">
+                <form action="/updateAccount" method="POST">
+                    <div>
+                        <label>Username:</label>
+                        <input type="text" id="username" name="username" value="{{{user.username}}}" disabled>
+                    </div><br>
+                    <div>
+                        <label>Full Name:</label>
+                        <input type="text" id="fullName" name="fullname" value="{{{user.fname}}}, {{{user.lname}}}">
+                    </div><br>
+                    <div>
+                        <label>Date of Birth</label>
+                        <input type="date" id="dob" name="dob" value="{{{user.dob}}}">
+                    </div> <br>
+                    <div>
+                        <label for="description">Description</label><br>
+                        <textarea rows="5" style="width: 100%" id="description"
+                            name="description">{{{user.description}}}</textarea>
+                    </div><br>
+                    <div id="accountButtons">
+                        <button type="submit" class="button">Save Changes</button>
+                        <button type="button" class="button" id="passwordButton">Change Password</button>
+                        <button type="button" class="button" id="deleteButton">Delete Account</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="confirmDeleteModal" class="confirmModal">
+        <div class="modalProfileContainer">
+            <div>
+                <form action="/deleteAccount" method="POST">
+                    <p>Are you sure you wish to delete your account?</p>
+                    <div id="accountButtons">
+                        <button type="sumbit">Permenantly Delete</button>
+                        <button type="button" onclick="location.href = '/settings'">No! Don't
+                            delete!</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="changePasswordModal" class="confirmModal">
+        <div class="modalProfileContainer">
+            <div>
+                <form action="/changePassword" method="POST">
+                    <p>Please enter your old password, then enter your new password twice.</p><br>
+                    <label for="oldPassword">Old Password:</label><br>
+                    <input type="password" name="oldPassword" id="oldPassword"><br>
+                    <label for="oldPassword">New Password:</label><br>
+                    <input type="password" name="newPassword" id="newPassword"><br>
+                    <label for="oldPassword">Re-enter Password:</label><br>
+                    <input type="password" name="reEnterPass" id="reEnterPass"><br>
+                    <p id="passwordNotification"></p>
+                    <div id="passwordButtons">
+                        <button type="sumbit" id="updateButton" class="modalButtons" disabled>Update Password</button>
+                        <button type="button" class="modalButtons" onclick="location.href = '/settings'">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="changeAvatarModal" class="confirmModal">
+        <div class="modalProfileContainer">
+            <div>
+                <h1>Please select a new avatar</h1>
+                <form action="updateAvatar" method="POST">
+                    <input type="text" name="avatar" id="avatarInput" required> <br>
+                    <img src="./images/avatars/avatar1.png" alt="avatar1.png" class="avatar">
+                    <img src="./images/avatars/avatar2.png" alt="avatar2.png" class="avatar">
+                    <img src="./images/avatars/avatar3.png" alt="avatar3.png" class="avatar">
+                    <img src="./images/avatars/avatar4.png" alt="avatar4.png" class="avatar">
+                    <img src="./images/avatars/avatar5.png" alt="avatar5.png" class="avatar">
+                    <img src="./images/avatars/avatar6.png" alt="avatar6.png" class="avatar">
+                    <img src="./images/avatars/avatar7.png" alt="avatar7.png" class="avatar">
+                    <img src="./images/avatars/avatar8.png" alt="avatar8.png" class="avatar">
+                    <img src="./images/avatars/avatar9.png" alt="avatar9.png" class="avatar">
+                    <img src="./images/avatars/avatar10.png" alt="avatar10.png" class="avatar"><br>
+
+                    <button type="sumbit" id="updateAvatar" class="modalButtons">Update Avatar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

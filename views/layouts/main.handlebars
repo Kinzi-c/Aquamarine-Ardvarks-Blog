@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Add css  -->
+    {{#if darkMode}}
+    <link rel="stylesheet" href="./css/dark.css">
+    {{else}}
+    <link rel="stylesheet" href="./css/main.css">
+    {{/if}}
+
+    
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Script element sourcing TinyMCE -->
+    <script type="application/javascript" src="/tinymce/tinymce.min.js"></script>
+    <!-- Script element sourcing the TinyMCE configuration -->
+    <script type="text/javascript" src="/javascript/text-editor.js"></script>
+
+
+    <!-- Script element sourcing the accountCreationAndVerification js -->
+    {{#if accountCreation}}
+    <script type="text/javascript" src="/javascript/accountCreationAndVerification.js"></script>
+    {{/if}}
+    <!-- Script element sourcing the client-side js -->
+    <script type="text/javascript" src="/javascript/client-side.js"></script>
+    <!-- Script element sourcing the settings configuration -->
+    {{#if settingsPage}}
+    <script type="text/javascript" src="/javascript/settings.js"></script>
+    {{/if}}
+    <!-- Pulls the script for the darkmode assests -->
+    <script type="module" src="https://unpkg.com/dark-mode-toggle"></script>
+        
+
+    <title>Aquamarine</title>
+
+</head>
+
+<body>
+
+    <!--<button onclick="topFunction()" id="back-top" title="Go to top">Top</button>-->
+    {{!-- HTML for top nav bar --}}
+    <div class="topnav">
+        <a href="/" id="logo"> <img src="./images/logo.jpg" alt="Aardvark" width="60px" height="auto"></a>
+        <div class="navbuttons">
+            <a class="navlink" href="/">Home</a>
+            <a class="navlink" href="/about">About</a>
+            {{#if user}}
+            <a class="navlink" href="/profile">My articles</a>
+            {{/if}}
+        </div>
+
+        <div class="search-container">
+            {{#if user}}
+            <a class="navlink" href="/logout">Logout</a>
+
+            {{!-- avatar --}}
+            <button class="homepage-button" id="avatar">
+                <h3>{{user.username}}<img src="./images/avatars/{{user.avatar}}" alt="avatar" class="avatar"
+                        style="height: 50px; width:auto; padding-left: 20px;"></h3>
+            </button>
+            <a class="navlink" href="/settings"><img src="./images/settings.png" alt="settings" width="30px"
+                    height="auto"></a>
+            {{/if}}
+            {{#unless user}}
+            {{!-- login signup buttons --}}
+            <button id="signup" class="homepage-button">Sign up</button>
+            <button id="login" class="homepage-button">Login</button>
+            {{/unless}}
+        </div>
+
+    </div>
+    {{! Display a message if one was provided. }}
+    {{#if toastMessage}}
+    <p class="toastMessage">{{toastMessage}}</p>
+    {{/if}}
+
+
+    {{{body}}}
+
+    <button onclick="topFunction()" id="backToTopButton" title="Go to top"><img src="./images/backTop.png" alt="Top"
+            width="30px" height="auto"></button>
+
+    <footer>
+        <div class="footer">
+            <div class="socialMediaIconLinks">
+                <!-- Add font awesome icons for socal media links-->
+                <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+                <a href="https://twitter.com/" class="fa fa-twitter"></a>
+                <a href="https://www.google.com/" class="fa fa-google"></a>
+                <a href="https://nz.linkedin.com/" class="fa fa-linkedin"></a>
+                <a href="https://www.youtube.com/" class="fa fa-youtube"></a>
+                <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+                <a href="https://www.pinterest.nz/" class="fa fa-pinterest"></a>
+            </div>
+            <div class="copyright">
+                &copy Copyright 2022 <a href="https://canvas.auckland.ac.nz/courses/84547">UoA COMPSIC719</a> All rights
+                reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

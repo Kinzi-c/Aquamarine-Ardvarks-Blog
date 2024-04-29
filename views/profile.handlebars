@@ -1,0 +1,42 @@
+<div class="about-header">
+    <h1 class="legend-titles ">{{user.username}} Articles</h1>
+</div>
+<div>
+    {{#unless darkMode}}
+    <button type="submit" class="transparentButton" id="create-button"><img src="./images/add-new.png" alt="addlogo"
+            height="40px"></button>
+    {{/unless}}
+     {{#if darkMode}}     
+     <button type="submit" class="transparentButton" id="create-button"><img src="./images/add-new-dark.png" alt="addlogo"
+            height="40px"></button>
+     {{/if}}  
+</div>
+
+<div id="article-container">
+    {{#each myArticleData}}
+    <a class="card" id="article-card" href="/article?id={{id}}">
+          <div class="onDisplay">
+        <div class="card-image">
+            <img src="./images/{{imageName}}" width="100%" height="300">
+        </div>
+        <div class="card-body">
+        <div class="hiddenDiv"><p>{{id}}</p></div>
+        <h3 name="title"><strong>{{title}}</strong></h3>
+        <h4 name="author"><em>{{authorName}}</em></h4>
+        <h5 name="timeStamp">{{publicationDate}}</h5>
+        </div>    
+    </div> 
+    <div class="offDisplay">
+        <div class="card-body">
+        <div class="hiddenDiv"><p>{{id}}</p></div>
+        <h3 name="title"><strong>{{title}}</strong></h3>
+        <h4 name="author"><em>{{authorName}}</em></h4>
+        <h5 name="publicationDate">{{publicationDate}}</h5>
+        <p name="description">{{description}}</p><br>
+        <button class="button" id="readTimeButton">{{readingTime}} min Read</button>
+        </div>     
+    </div>   
+  
+     </a>
+{{/each}}
+</div>

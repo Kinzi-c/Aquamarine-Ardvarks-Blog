@@ -1,0 +1,29 @@
+<div id="grid-container">
+  <div class="about-header">
+      <h1 class="legend-titles">Edit Article</h1>
+  </div>
+  <form id="edited-article-form" action="./editArticle" method="POST" enctype="multipart/form-data">
+    <div class="form">
+      <div class="title">
+        <textarea id="hiddenDiv" type="id" name="id">{{id}}</textarea>
+        <label for="title">Title</label><br>
+        <input type="text" id="title" name="title" value="{{title}}">
+      </div>
+      <div class="description">
+        <label for="description">Description</label><br>
+        <textarea type="text" id="description" name="description">{{description}}</textarea>
+      </div>
+
+      <div id="text-editor">
+        <textarea id="article" name="content">{{content}}</textarea>
+      </div> 
+      <div id="button-div">
+        <button class="submit-button">Publish</button>
+      </div>
+
+    </div>
+  </form>
+        
+      
+
+</div>

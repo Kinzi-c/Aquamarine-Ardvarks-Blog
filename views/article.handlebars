@@ -1,0 +1,75 @@
+<div class="article-header">
+    {{#if author}}
+    <div id="article-button">
+        <div class="button-div">
+            {{#unless darkMode}}
+                <a id="edit-button" href="/editArticle?id={{id}}"><img src="./images/edit.png" alt="edit" height="40px"></a>
+                <a href="/deleteArticle?id={{id}}"><img src="./images/delete.png" alt="delete" height="40px"></a>
+            {{/unless}}
+            {{#if darkMode}}
+                <a id="edit-button" href="/editArticle?id={{id}}"><img src="./images/edit-dark.png" alt="edit" height="40px"></a>
+                <a href="/deleteArticle?id={{id}}"><img src="./images/delete-dark.png" alt="delete" height="40px"></a>
+            {{/if}}
+        </div>
+    </div>
+
+    {{/if}}
+
+    <div id="hiddenDiv">
+        <p>{{id}}</p>
+    </div>
+    <h1 id="article-title" name="title">{{title}}</h1>
+    <h2 name="readingTime" id="subtitle">{{authorName}} / {{readingTime}} min / {{category}}</h2>
+    <h5 id="date" name="publicationDate">{{publicationDate}}</h5>
+</div>
+
+<div class="article-image">
+    <img id="featured-image" src="./images/{{imageName}}" alt="{{imageName}}" width="100%" height="600">
+</div>
+
+<div class="article-body">
+    <div name="content">{{{content}}}</div>
+</div>
+
+{{#if user}}
+{{!-- Comment Section --}}
+<div id="comment-container">
+    <div class="comment-box">
+        <div class="row">
+            <div class="col-9">
+                <h4 id="comment-user">{{user.username}}</h4>
+                <form action="comment" method="POST">
+                    <textarea type="text" id="inputStatus" class="comment-textarea" name="message"
+                        placeholder="please share your thoughts"></textarea>
+                    <input type="text" name="articleId" value="{{id}}" id="avatarInput">
+                    <div class="d-flex">
+                        <button type="sumbit" class="button">Submit Comment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div id="addTask">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{#each comments}}
+<div id="comment-container">
+    <div class="comment-box">
+            <div class="col-9">
+                <h4 id="comment-user">{{this.username}}</h4>
+                <p>{{this.message}}<p>
+            </div>
+        </div>
+            <div class="col-12">
+                <div id="addTask">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
+{{/if}}

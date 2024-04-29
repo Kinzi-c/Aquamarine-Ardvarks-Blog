@@ -1,0 +1,46 @@
+<div id="grid-container">
+  <div class="about-header">
+    <h1 class="legend-titles">New Article</h1>
+  </div>
+   
+  <form id="new-article-form" action="./newArticle" method="POST" enctype="multipart/form-data">
+
+    <div class="form">
+
+      <div class="title">
+        <label for="title">Title</label><br>
+        <input type="text" id="title" name="title">
+      </div>
+
+      <div class="category">
+          <label for="category">Category</label><br><br>
+          <label><input id="check" type="radio" name="category" value="Travel">Travel</label>
+          <label><input id="check" type="radio" name="category" value="Food">Food</label>
+          <label><input id="check" type="radio" name="category" value="Event">Event</label>
+      </div>
+
+      <div class="description">
+        <label for="description">Description</label><br>
+        <textarea type="text" id="description" name="description"></textarea>
+      </div>
+
+      <div id="text-editor">
+        <textarea id="article" name="content"></textarea>  
+      </div> 
+
+      <div id="button-div">
+        <button class="submit-button">Publish</button>
+      </div>
+
+      <div class="image">
+        <label for="inpFile">Cover Image</label>
+        <div class="submit-button">
+          <input id="fileButton" type="file" name="imageFile" accept=".png,.jpg,.jpeg,.bmp,.gif">
+        </div>
+      </div>
+    </div>
+    
+  </form>
+ 
+
+</div>
